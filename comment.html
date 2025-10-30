@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comment box</title>
+    <style>
+        .comment {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>my comment box . write what in your mind</h1>
+    <section>
+      <h3>Your Comment:</h3>
+      <div>
+        <p class="comment">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
+          fugit?
+        </p>
+        <p class="comment">
+          Sunt esse aperiam officia vitae architecto explicabo dolor quaerat
+          quasi.
+        </p>
+        <p class="comment">
+          Iure vel tempora veritatis ut impedit, possimus distinctio quibusdam
+          quasi!
+        </p>
+      </div>
+      <form>
+<textarea name="" id="" cols="30" rows="5"></textarea>
+        <br>
+        <button id="btn-post-comment" type="submit">Submit</button>
+      </form>
+    </section>
+    <script>
+        document.getElementById('btn-post-comment').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+            const textarea = document.querySelector('textarea');
+            const commentText = textarea.value.trim();
+            if (commentText) {
+                const newComment = document.createElement('p');
+                newComment.className = 'comment';
+                newComment.textContent = commentText;
+                document.querySelector('section > div').appendChild(newComment);
+                textarea.value = ''; // Clear the textarea
+            }
+        });
+    </script>
+  </body>
+</html>

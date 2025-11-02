@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event bubble</title>
+    <style>
+      body {
+        border: 3px solid red;
+        margin: 5px;
+      }
+      section {
+        border: 3px solid green;
+        margin: 5px;
+      }
+      ol {
+        border: 3px solid blue;
+        margin: 5px;
+      }
+      li {
+        border: 3px solid purple;
+        margin: 5px;
+      }
+      body {
+        border: 3px solid red;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Explore Event Bubble</h1>
+    <section>
+      <h3>List of things</h3>
+      <ol id="item-list">
+        <li id="item-1">Lorem, ipsum dolor.</li>
+        <li id="item-2">Illum, nam veritatis.</li>
+        <li id="item-3">Cupiditate, delectus velit.</li>
+        <li id="item-4">Maiores, incidunt ratione!</li>
+        <li id="item-5">Aliquam, soluta modi.</li>
+        <li id="item-6">Sed, neque adipisci.</li>
+      </ol>
+    </section>
+    <script>
+        //list item click events
+      document
+        .getElementById("item-2")
+        .addEventListener("click", function () {
+          console.log("Item 2 clicked");
+          // event.stopPropagation(); // Uncomment to stop bubbling
+        });
+
+
+          //ol list item click events
+      document
+        .getElementById("item-list")
+        .addEventListener("click", function () {
+          console.log("ol clicked");
+          // event.stopPropagation(); // Uncomment to stop bubbling
+        });
+    </script>
+  </body>
+</html>
